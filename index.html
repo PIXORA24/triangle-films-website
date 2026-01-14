@@ -109,6 +109,7 @@
   </a>
 
   <!-- VIDEO MODAL -->
+  <!--
   <div class="video-modal" id="videoModal">
     <div class="video-modal-overlay"></div>
 
@@ -117,6 +118,7 @@
       <video id="modalVideo" controls></video>
     </div>
   </div>
+  -->
 
   <!-- MOTION SCRIPT -->
   <script>
@@ -135,32 +137,36 @@
       observer.observe(el);
     });
 
-    // MODAL VIDEO LOGIC
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const closeBtn = document.getElementById('closeVideo');
+   // MODAL VIDEO LOGIC
+    
+    
+<!--
+const modal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const closeBtn = document.getElementById('closeVideo');
 
-    document.querySelectorAll('.work-preview').forEach(video => {
-      video.addEventListener('click', () => {
-        modalVideo.src = video.dataset.video;
-        modal.classList.add('active');
-        modalVideo.play();
-      });
-    });
+document.querySelectorAll('.work-preview').forEach(video => {
+  video.addEventListener('click', () => {
+    modalVideo.src = video.dataset.video;
+    modal.classList.add('active');
+    modalVideo.play();
+  });
+});
 
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-      if (e.target.classList.contains('video-modal-overlay')) {
-        closeModal();
-      }
-    });
+closeBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', e => {
+  if (e.target.classList.contains('video-modal-overlay')) {
+    closeModal();
+  }
+});
 
-    function closeModal() {
-      modalVideo.pause();
-      modalVideo.currentTime = 0;
-      modalVideo.src = "";
-      modal.classList.remove('active');
-    }
+function closeModal() {
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+  modalVideo.src = "";
+  modal.classList.remove('active');
+}
+-->
   </script>
 
 </body>
