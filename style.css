@@ -21,11 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 10;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.6),
-    rgba(0,0,0,0)
-  );
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
 }
 
 .logo img {
@@ -61,7 +57,6 @@ body {
 
 .hero h1 {
   font-size: 64px;
-  font-weight: 500;
   margin-bottom: 24px;
 }
 
@@ -79,12 +74,16 @@ body {
   box-shadow: 0 0 18px rgba(37,211,102,0.6);
 }
 
-/* SECTION SPACING (CONTROLLED) */
+/* SECTIONS */
 .work,
 .photography,
 .services,
 .final-cta {
   padding: 120px 8%;
+}
+
+.work {
+  margin-top: -80px;
 }
 
 .work h2,
@@ -93,7 +92,7 @@ body {
   margin-bottom: 40px;
 }
 
-/* WORK */
+/* WORK GRID */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -107,31 +106,14 @@ body {
   border-radius: 12px;
   object-fit: cover;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  filter: brightness(0.85);
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
 }
 
 .work-preview:hover {
+  filter: brightness(1);
   transform: scale(1.03);
   box-shadow: 0 0 20px rgba(37,211,102,0.15);
-}
-
-.work-preview::after {
-  content: "▶";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  color: rgba(255,255,255,0.6);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.work-preview:hover::after {
-  opacity: 1;
 }
 
 /* NEON DIVIDER */
@@ -144,6 +126,10 @@ body {
 }
 
 /* PHOTOGRAPHY */
+.photography {
+  padding-top: 80px;
+}
+
 .photo-strip {
   display: flex;
   gap: 24px;
