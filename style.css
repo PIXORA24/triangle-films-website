@@ -76,13 +76,14 @@ section {
   max-width: 640px;
 }
 
+/* HERO LOGO */
 .hero-logo {
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   transition: transform .4s ease, opacity .4s ease;
 }
 
 .hero-logo img {
-  height: 120px;
+  height: 160px; /* 🔥 bigger */
   width: auto;
 }
 
@@ -211,7 +212,7 @@ footer {
   }
 
   .hero-logo img {
-    height: 80px;
+    height: 96px; /* 🔥 mobile hero logo */
   }
 
   .hero h1 {
