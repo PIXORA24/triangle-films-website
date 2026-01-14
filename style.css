@@ -11,11 +11,6 @@ body {
   color: #FFFFFF;
 }
 
-/* GLOBAL SECTION RHYTHM */
-section {
-  padding: 120px 8%;
-}
-
 /* HEADER */
 .site-header {
   position: fixed;
@@ -48,7 +43,6 @@ section {
 
 /* HERO */
 .hero {
-  padding: 0;
   height: 100vh;
   position: relative;
 }
@@ -85,6 +79,20 @@ section {
   box-shadow: 0 0 18px rgba(37,211,102,0.6);
 }
 
+/* SECTION SPACING (CONTROLLED) */
+.work,
+.photography,
+.services,
+.final-cta {
+  padding: 120px 8%;
+}
+
+.work h2,
+.photography h2,
+.services h2 {
+  margin-bottom: 40px;
+}
+
 /* WORK */
 .work-grid {
   display: grid;
@@ -93,12 +101,14 @@ section {
 }
 
 .work-preview {
-  height: 300px;
   width: 100%;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  background: #111;
   border-radius: 12px;
+  object-fit: cover;
   cursor: pointer;
   position: relative;
+  overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -152,7 +162,6 @@ section {
 
 .services ul {
   list-style: none;
-  margin-top: 24px;
 }
 
 .services li {
@@ -203,7 +212,10 @@ footer {
 }
 
 @media (max-width: 768px) {
-  section {
+  .work,
+  .photography,
+  .services,
+  .final-cta {
     padding: 100px 6%;
   }
 
@@ -213,10 +225,6 @@ footer {
 
   .work-grid {
     grid-template-columns: 1fr;
-  }
-
-  .work-preview {
-    height: 220px;
   }
 
   .photo-strip img {
