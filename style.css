@@ -11,6 +11,11 @@ body {
   color: #FFFFFF;
 }
 
+/* GLOBAL SECTION RHYTHM */
+section {
+  padding: 120px 8%;
+}
+
 /* HEADER */
 .site-header {
   position: fixed;
@@ -33,16 +38,17 @@ body {
 }
 
 .header-cta {
-  font-size: 14px;
   color: #fff;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.3);
   padding: 8px 16px;
   border-radius: 20px;
+  font-size: 14px;
 }
 
 /* HERO */
 .hero {
+  padding: 0;
   height: 100vh;
   position: relative;
 }
@@ -61,6 +67,7 @@ body {
 
 .hero h1 {
   font-size: 64px;
+  font-weight: 500;
   margin-bottom: 24px;
 }
 
@@ -71,17 +78,14 @@ body {
   color: #000;
   border-radius: 40px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .cta:hover {
-  box-shadow: 0 0 18px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 0 18px rgba(37,211,102,0.6);
 }
 
 /* WORK */
-.work {
-  padding: 120px 8%;
-}
-
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -125,14 +129,11 @@ body {
   width: 80px;
   height: 2px;
   background: #25D366;
-  margin: 80px auto;
+  margin: 0 auto;
+  box-shadow: 0 0 12px rgba(37,211,102,0.6);
 }
 
 /* PHOTOGRAPHY */
-.photography {
-  padding: 120px 8%;
-}
-
 .photo-strip {
   display: flex;
   gap: 24px;
@@ -146,11 +147,12 @@ body {
 
 /* SERVICES */
 .services {
-  padding: 120px 8%;
+  max-width: 900px;
 }
 
 .services ul {
   list-style: none;
+  margin-top: 24px;
 }
 
 .services li {
@@ -166,12 +168,14 @@ body {
 
 /* FINAL CTA */
 .final-cta {
-  padding: 120px 8%;
   text-align: center;
+  padding-top: 160px;
+  padding-bottom: 160px;
 }
 
 .final-cta h2 {
   font-size: 40px;
+  margin-bottom: 32px;
 }
 
 /* FOOTER */
@@ -185,7 +189,7 @@ footer {
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-up.visible {
@@ -194,13 +198,47 @@ footer {
 }
 
 /* MOBILE */
+.mobile-whatsapp {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  section {
+    padding: 100px 6%;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
   .work-grid {
     grid-template-columns: 1fr;
   }
 
   .work-preview {
     height: 220px;
+  }
+
+  .photo-strip img {
+    height: 240px;
+  }
+
+  .final-cta h2 {
+    font-size: 28px;
+  }
+
+  .mobile-whatsapp {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #000;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 20;
   }
 }
 
@@ -223,4 +261,5 @@ footer {
   width: 90%;
   max-width: 900px;
   border-radius: 12px;
+  background: #000;
 }
