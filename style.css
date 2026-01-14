@@ -1,58 +1,236 @@
-/* WORK PREVIEW INTERACTION */
-.work-preview {
-  cursor: pointer;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* VIDEO MODAL */
-.video-modal {
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0E0E0E;
+  color: #FFFFFF;
+}
+
+/* HEADER */
+.site-header {
   position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 50;
-}
-
-.video-modal.active {
-  display: block;
-}
-
-.video-modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
-}
-
-.video-modal-content {
-  position: relative;
-  z-index: 51;
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.video-modal video {
+  top: 0;
   width: 100%;
-  border-radius: 12px;
+  padding: 24px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0)
+  );
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+}
+
+.header-cta {
+  font-size: 14px;
+  text-decoration: none;
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   background: #000;
 }
 
-.video-close {
+.hero-content {
   position: absolute;
-  top: -40px;
-  right: 0;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 32px;
-  cursor: pointer;
+  bottom: 15%;
+  left: 8%;
+  max-width: 600px;
 }
 
+.hero h1 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+/* CTA */
+.cta {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #25D366;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 40px;
+}
+
+.cta:hover {
+  box-shadow: 0 0 18px rgba(37, 211, 102, 0.6);
+}
+
+/* WORK */
+.work {
+  padding: 120px 8%;
+}
+
+.work h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
 
 .work-preview {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
   cursor: pointer;
 }
+
+/* NEON DIVIDER */
+.neon-divider {
+  width: 80px;
+  height: 2px;
+  background: #25D366;
+  margin: 80px auto;
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
+}
+
+/* PHOTOGRAPHY */
+.photography {
+  padding: 120px 8%;
+}
+
+.photography h2 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.photo-strip {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+}
+
+.photo-strip img {
+  height: 360px;
+  border-radius: 12px;
+}
+
+/* SERVICES */
+.services {
+  padding: 120px 8%;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+.services ul {
+  list-style: none;
+}
+
+.services li {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #B3B3B3;
+}
+
+/* FINAL CTA */
+.final-cta {
+  padding: 120px 8%;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: 40px;
+  margin-bottom: 32px;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* MOTION */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE WHATSAPP */
+.mobile-whatsapp {
+  display: none;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-preview {
+    height: 220px;
+  }
+
+  .photo-strip img {
+    height: 240px;
+  }
+
+  .mobile-whatsapp {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #000;
+    padding: 14px 18px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 20;
+  }
+}
+
+/* ========================= */
+/* VIDEO MODAL (APPENDED) */
+/* ========================= */
 
 .video-modal {
   position: fixed;
