@@ -74,10 +74,10 @@
     <h2 class="fade-up">Photography</h2>
 
     <div class="photo-strip fade-up">
-      <img src="media/photo1.jpg" loading="lazy" alt="Photography work">
-      <img src="media/photo2.jpg" loading="lazy" alt="Photography work">
-      <img src="media/photo3.jpg" loading="lazy" alt="Photography work">
-      <img src="media/photo4.jpg" loading="lazy" alt="Photography work">
+      <img src="media/photo1.jpg" alt="">
+      <img src="media/photo2.jpg" alt="">
+      <img src="media/photo3.jpg" alt="">
+      <img src="media/photo4.jpg" alt="">
     </div>
   </section>
 
@@ -109,7 +109,7 @@
 
   <!-- MOBILE WHATSAPP -->
   <a class="mobile-whatsapp"
-     href="https://wa.me/916361426217?text=Hi,%20I%20want%20to%20enquire%20about%20your%20services."
+     href="https://wa.me/916361426217"
      target="_blank">
      WhatsApp
   </a>
@@ -121,7 +121,6 @@
 
   <!-- SCRIPTS -->
   <script>
-    // Fade-up animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -132,7 +131,6 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Modal video logic
     const modal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
 
