@@ -116,10 +116,7 @@
 
   <!-- VIDEO MODAL -->
   <div class="video-modal" id="videoModal">
-    <div class="video-modal-overlay"></div>
-    <div class="video-modal-content">
-      <video id="modalVideo" controls></video>
-    </div>
+    <video id="modalVideo" controls></video>
   </div>
 
   <!-- SCRIPTS -->
@@ -135,7 +132,7 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Modal video logic (SAFE)
+    // Modal video logic
     const modal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
 
