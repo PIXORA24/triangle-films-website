@@ -14,7 +14,7 @@ body {
   color: #fff;
 }
 
-/* GLOBAL RHYTHM */
+/* GLOBAL */
 section {
   padding: 80px 8%;
 }
@@ -32,8 +32,19 @@ section {
   background: linear-gradient(to bottom, rgba(0,0,0,.7), transparent);
 }
 
+.site-header .logo {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.site-header.scrolled .logo {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .logo img {
-  height: 30px;
+  height: 32px;
 }
 
 .header-cta {
@@ -58,27 +69,21 @@ section {
   object-fit: cover;
 }
 
-/* HERO LOGO */
-.hero-logo {
+.hero-content {
   position: absolute;
-  top: 14%;
   left: 8%;
-  z-index: 2;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  bottom: 14%;
+  max-width: 640px;
+}
+
+.hero-logo {
+  margin-bottom: 28px;
+  transition: transform .4s ease, opacity .4s ease;
 }
 
 .hero-logo img {
-  height: 96px;
+  height: 120px;
   width: auto;
-}
-
-/* HERO CONTENT */
-.hero-content {
-  position: absolute;
-  bottom: 14%;
-  left: 8%;
-  max-width: 600px;
-  margin-top: 120px;
 }
 
 .hero h1 {
@@ -118,12 +123,6 @@ section {
   height: 280px;
   object-fit: cover;
   border-radius: 16px;
-  cursor: pointer;
-  transition: transform .4s ease;
-}
-
-.work-preview:hover {
-  transform: scale(1.03);
 }
 
 /* MOMENTS */
@@ -162,10 +161,6 @@ section {
   margin-bottom: 14px;
 }
 
-.services li:hover {
-  color: #25D366;
-}
-
 /* FINAL CTA */
 .final-cta {
   display: flex;
@@ -175,7 +170,6 @@ section {
 
 .cta-box {
   max-width: 900px;
-  width: 100%;
   padding: 64px 48px;
   text-align: center;
   border-radius: 24px;
@@ -206,27 +200,6 @@ footer {
   transform: translateY(0);
 }
 
-/* VIDEO MODAL */
-.video-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-}
-
-.video-modal.active {
-  display: flex;
-}
-
-.video-modal video {
-  width: 90%;
-  max-width: 900px;
-  border-radius: 16px;
-}
-
 /* MOBILE */
 @media (max-width: 768px) {
   section {
@@ -238,11 +211,7 @@ footer {
   }
 
   .hero-logo img {
-    height: 64px;
-  }
-
-  .hero-logo {
-    top: 10%;
+    height: 80px;
   }
 
   .hero h1 {
