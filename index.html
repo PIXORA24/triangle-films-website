@@ -8,125 +8,128 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="logo">
-    <img src="media/logo.png" alt="Triangle Films">
-  </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      <img src="media/logo.png" alt="Triangle Films">
+    </div>
 
-  <a class="header-cta"
-     href="https://wa.me/916361426217"
-     target="_blank">WhatsApp</a>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <video autoplay muted loop playsinline>
-    <source src="media/hero.mp4" type="video/mp4">
-  </video>
-
-  <div class="hero-content fade-up">
-    <h1>Visual stories,<br>shot with intent.</h1>
-    <a class="cta" href="https://wa.me/916361426217" target="_blank">
-      Enquire on WhatsApp
+    <a class="header-cta" href="https://wa.me/916361426217" target="_blank">
+      WhatsApp
     </a>
-  </div>
-</section>
+  </header>
 
-<!-- STORIES CAPTURED -->
-<section class="stories">
-  <h2 class="fade-up">Stories Captured</h2>
-
-  <div class="stories-grid">
-    <video class="story-card fade-up"
-           autoplay muted loop playsinline
-           data-full="media/work1-full.mp4">
-      <source src="media/work1-preview.mp4" type="video/mp4">
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="media/hero.mp4" type="video/mp4">
     </video>
 
-    <video class="story-card fade-up"
-           autoplay muted loop playsinline
-           data-full="media/work2-full.mp4">
-      <source src="media/work2-preview.mp4" type="video/mp4">
-    </video>
+    <div class="hero-content fade-up">
+      <h1>Visual stories,<br>shot with intent.</h1>
+      <a class="cta" href="https://wa.me/916361426217" target="_blank">
+        Enquire on WhatsApp
+      </a>
+    </div>
+  </section>
 
-    <video class="story-card fade-up"
-           autoplay muted loop playsinline
-           data-full="media/work3-full.mp4">
-      <source src="media/work3-preview.mp4" type="video/mp4">
-    </video>
+  <!-- VIDEO STORIES -->
+  <section class="work">
+    <h2 class="fade-up">Stories captured by us</h2>
+
+    <div class="work-grid fade-up">
+      <video class="work-preview"
+             autoplay muted loop playsinline preload="auto">
+        <source src="media/work1.mp4" type="video/mp4">
+      </video>
+
+      <video class="work-preview"
+             autoplay muted loop playsinline preload="auto">
+        <source src="media/work2.mp4" type="video/mp4">
+      </video>
+
+      <video class="work-preview"
+             autoplay muted loop playsinline preload="auto">
+        <source src="media/work3.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- PHOTOGRAPHY -->
+  <section class="photography">
+    <h2 class="fade-up">Moments captured by us</h2>
+
+    <div class="photo-strip fade-up">
+      <img src="media/photo1.jpg" alt="">
+      <img src="media/photo2.jpg" alt="">
+      <img src="media/photo3.jpg" alt="">
+      <img src="media/photo4.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <h2 class="fade-up">What We Do</h2>
+    <ul class="fade-up">
+      <li>Cinematic Video Production</li>
+      <li>Professional Photography</li>
+      <li>Reels & Short-form Editing</li>
+      <li>Events & Weddings</li>
+    </ul>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="cta-box fade-up">
+      <h2>Let’s create something worth remembering.</h2>
+      <a class="cta" href="https://wa.me/916361426217" target="_blank">
+        Start a WhatsApp Conversation
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Triangle Films · Your City
+  </footer>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal">
+    <video id="modalVideo" controls></video>
   </div>
-</section>
 
-<!-- MOMENTS CAPTURED -->
-<section class="moments">
-  <h2 class="fade-up">Moments Captured</h2>
+  <!-- SCRIPT -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
 
-  <div class="photo-strip fade-up">
-    <img src="media/photo1.jpg" alt="">
-    <img src="media/photo2.jpg" alt="">
-    <img src="media/photo3.jpg" alt="">
-    <img src="media/photo4.jpg" alt="">
-  </div>
-</section>
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-<!-- WHAT WE DO -->
-<section class="services">
-  <h2 class="fade-up">What We Do</h2>
-  <ul class="fade-up">
-    <li>Cinematic Video Production</li>
-    <li>Professional Photography</li>
-    <li>Reels & Short-form Editing</li>
-    <li>Events & Weddings</li>
-  </ul>
-</section>
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
 
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <h2 class="fade-up">Let’s create something worth remembering.</h2>
-  <a class="cta" href="https://wa.me/916361426217" target="_blank">
-    Start a WhatsApp Conversation
-  </a>
-</section>
+    document.querySelectorAll('.work-preview').forEach(video => {
+      video.play().catch(() => {});
 
-<footer>
-  <p>Triangle Films · Your City</p>
-</footer>
-
-<!-- VIDEO MODAL -->
-<div class="video-modal" id="videoModal">
-  <video id="modalVideo" controls></video>
-</div>
-
-<script>
-  // fade-up animation
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+      video.addEventListener('click', () => {
+        modalVideo.src = video.currentSrc;
+        modal.classList.add('active');
+        modalVideo.play();
+      });
     });
-  }, { threshold: 0.15 });
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // modal logic
-  const modal = document.getElementById('videoModal');
-  const modalVideo = document.getElementById('modalVideo');
-
-  document.querySelectorAll('.story-card').forEach(card => {
-    card.addEventListener('click', () => {
-      modalVideo.src = card.dataset.full;
-      modal.classList.add('active');
-      modalVideo.play();
+    modal.addEventListener('click', () => {
+      modalVideo.pause();
+      modalVideo.src = "";
+      modal.classList.remove('active');
     });
-  });
-
-  modal.addEventListener('click', () => {
-    modalVideo.pause();
-    modalVideo.src = "";
-    modal.classList.remove('active');
-  });
-</script>
+  </script>
 
 </body>
 </html>
