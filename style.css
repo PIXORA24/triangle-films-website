@@ -47,7 +47,7 @@ section {
 
 /* HERO */
 .hero {
-  height: 100vh;
+  height: 75vh; /* ✅ desktop reduced */
   position: relative;
   padding: 0;
 }
@@ -86,7 +86,7 @@ section {
   box-shadow: 0 0 18px rgba(37,211,102,.6);
 }
 
-/* STORIES (VIDEO GRID) */
+/* STORIES */
 .work h2 {
   margin-bottom: 32px;
 }
@@ -110,7 +110,7 @@ section {
   transform: scale(1.03);
 }
 
-/* MOMENTS (PHOTOS) */
+/* MOMENTS */
 .photography {
   padding-top: 64px;
 }
@@ -215,6 +215,10 @@ footer {
 @media (max-width: 768px) {
   section {
     padding: 64px 6%;
+  }
+
+  .hero {
+    height: 100vh; /* ✅ mobile stays full screen */
   }
 
   .hero h1 {
