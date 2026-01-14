@@ -14,9 +14,9 @@ body {
   color: #fff;
 }
 
-/* GLOBAL */
+/* GLOBAL RHYTHM */
 section {
-  padding: 88px 8%;
+  padding: 80px 8%;
 }
 
 /* HEADER */
@@ -86,9 +86,9 @@ section {
   box-shadow: 0 0 18px rgba(37,211,102,.6);
 }
 
-/* VIDEO STORIES */
+/* STORIES (VIDEO GRID) */
 .work h2 {
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .work-grid {
@@ -110,16 +110,19 @@ section {
   transform: scale(1.03);
 }
 
-/* PHOTOGRAPHY */
+/* MOMENTS (PHOTOS) */
+.photography {
+  padding-top: 64px;
+}
+
 .photography h2 {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .photo-strip {
   display: flex;
   gap: 24px;
   overflow-x: auto;
-  padding-bottom: 8px;
 }
 
 .photo-strip img {
@@ -211,7 +214,7 @@ footer {
 /* MOBILE */
 @media (max-width: 768px) {
   section {
-    padding: 72px 6%;
+    padding: 64px 6%;
   }
 
   .hero h1 {
