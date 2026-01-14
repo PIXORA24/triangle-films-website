@@ -69,6 +69,7 @@ section {
   object-fit: cover;
 }
 
+/* HERO CONTENT */
 .hero-content {
   position: absolute;
   left: 8%;
@@ -76,15 +77,17 @@ section {
   max-width: 640px;
 }
 
-/* HERO LOGO */
+/* HERO LOGO – POLISHED */
 .hero-logo {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
+  opacity: 0.92;
   transition: transform .4s ease, opacity .4s ease;
 }
 
 .hero-logo img {
-  height: 160px; /* 🔥 bigger */
+  height: 140px;
   width: auto;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
 }
 
 .hero h1 {
@@ -212,7 +215,7 @@ footer {
   }
 
   .hero-logo img {
-    height: 96px; /* 🔥 mobile hero logo */
+    height: 96px;
   }
 
   .hero h1 {
