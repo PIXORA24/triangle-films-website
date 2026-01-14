@@ -24,25 +24,26 @@
 
   <!-- HERO -->
   <section class="hero">
-
-    <!-- HERO LOGO OVERLAY -->
-    <div class="hero-logo">
-      <img src="media/logo.png" alt="Triangle Films">
-    </div>
-
     <video autoplay muted loop playsinline preload="auto">
       <source src="media/hero.mp4" type="video/mp4">
     </video>
 
-    <div class="hero-content fade-up">
-      <h1>Visual stories,<br>shot with intent.</h1>
-      <a class="cta" href="https://wa.me/916361426217" target="_blank">
+    <div class="hero-content">
+      <div class="hero-logo">
+        <img src="media/logo.png" alt="Triangle Films">
+      </div>
+
+      <h1 class="fade-up">
+        Visual stories,<br>shot with intent.
+      </h1>
+
+      <a class="cta fade-up" href="https://wa.me/916361426217" target="_blank">
         Enquire on WhatsApp
       </a>
     </div>
   </section>
 
-  <!-- STORIES (VIDEO) -->
+  <!-- STORIES -->
   <section class="work">
     <h2 class="fade-up">Stories captured by us</h2>
 
@@ -50,18 +51,16 @@
       <video class="work-preview" autoplay muted loop playsinline preload="auto">
         <source src="media/work1.mp4" type="video/mp4">
       </video>
-
       <video class="work-preview" autoplay muted loop playsinline preload="auto">
         <source src="media/work2.mp4" type="video/mp4">
       </video>
-
       <video class="work-preview" autoplay muted loop playsinline preload="auto">
         <source src="media/work3.mp4" type="video/mp4">
       </video>
     </div>
   </section>
 
-  <!-- MOMENTS (PHOTOGRAPHY) -->
+  <!-- MOMENTS -->
   <section class="photography">
     <h2 class="fade-up">Moments captured by us</h2>
 
@@ -99,14 +98,9 @@
     Triangle Films · Mangalore
   </footer>
 
-  <!-- VIDEO MODAL -->
-  <div class="video-modal" id="videoModal">
-    <video id="modalVideo" controls></video>
-  </div>
-
   <!-- SCRIPT -->
   <script>
-    /* Fade-up observer */
+    // Fade-up animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -115,36 +109,19 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    /* Video modal */
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-
-    document.querySelectorAll('.work-preview').forEach(video => {
-      video.play().catch(() => {});
-
-      video.addEventListener('click', () => {
-        modalVideo.src = video.currentSrc;
-        modal.classList.add('active');
-        modalVideo.play();
-      });
-    });
-
-    modal.addEventListener('click', () => {
-      modalVideo.pause();
-      modalVideo.src = "";
-      modal.classList.remove('active');
-    });
-
-    /* HERO LOGO SCROLL BEHAVIOR */
+    // Logo behavior on scroll
+    const header = document.querySelector('.site-header');
     const heroLogo = document.querySelector('.hero-logo');
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 80) {
-        heroLogo.style.transform = 'scale(0.55)';
+      if (window.scrollY > 120) {
+        header.classList.add('scrolled');
         heroLogo.style.opacity = '0';
+        heroLogo.style.transform = 'scale(0.7)';
       } else {
-        heroLogo.style.transform = 'scale(1)';
+        header.classList.remove('scrolled');
         heroLogo.style.opacity = '1';
+        heroLogo.style.transform = 'scale(1)';
       }
     });
   </script>
