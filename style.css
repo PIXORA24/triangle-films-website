@@ -80,14 +80,19 @@ section {
 /* HERO LOGO – POLISHED */
 .hero-logo {
   margin-bottom: 28px;
-  opacity: 0.92;
-  transition: transform .4s ease, opacity .4s ease;
+  transition: transform .4s ease;
 }
 
 .hero-logo img {
-  height: 140px;
+  height: 140px; /* HERO size */
   width: auto;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+  transition: height .4s ease;
+}
+
+/* Shrunk state = exactly half */
+.hero-logo.shrink img {
+  height: 70px;
 }
 
 .hero h1 {
