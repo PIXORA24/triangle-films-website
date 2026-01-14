@@ -88,15 +88,7 @@ body {
   margin-top: -80px;
 }
 
-/* Reduce unwanted gap */
-.photography {
-  padding-bottom: 60px;
-}
-
-.services {
-  padding-top: 60px;
-}
-
+/* TITLES */
 .work h2,
 .photography h2,
 .services h2 {
@@ -141,7 +133,12 @@ body {
   box-shadow: 0 0 12px rgba(37,211,102,0.6);
 }
 
-/* PHOTOGRAPHY */
+/* PHOTOGRAPHY – COMPRESSED BOTTOM */
+.photography {
+  padding-bottom: 24px;
+}
+
+/* PHOTO STRIP */
 .photo-strip {
   display: flex;
   gap: 24px;
@@ -153,8 +150,9 @@ body {
   border-radius: 12px;
 }
 
-/* SERVICES */
+/* SERVICES – TIGHT TOP */
 .services {
+  padding-top: 48px;
   max-width: 900px;
 }
 
