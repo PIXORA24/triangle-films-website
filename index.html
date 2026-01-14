@@ -16,10 +16,8 @@
       <img src="media/logo.png" alt="Triangle Films">
     </div>
 
-    <a class="header-cta"
-       href="https://wa.me/916361426217"
-       target="_blank">
-       WhatsApp
+    <a class="header-cta" href="https://wa.me/916361426217" target="_blank">
+      WhatsApp
     </a>
   </header>
 
@@ -106,7 +104,7 @@
     <p>Triangle Films · Your City</p>
   </footer>
 
-  <!-- MOBILE CTA -->
+  <!-- MOBILE WHATSAPP -->
   <a class="mobile-whatsapp" href="https://wa.me/916361426217" target="_blank">
     WhatsApp
   </a>
@@ -127,7 +125,10 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Hover preview (YouTube-style)
+    // Hover preview + modal
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+
     document.querySelectorAll('.work-preview').forEach(video => {
       video.addEventListener('mouseenter', () => {
         video.play();
@@ -144,10 +145,6 @@
         modalVideo.play();
       });
     });
-
-    // Modal logic
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
 
     modal.addEventListener('click', () => {
       modalVideo.pause();
