@@ -45,19 +45,25 @@
 
     <div class="work-grid">
       <video class="fade-up work-preview"
-             muted loop playsinline preload="none"
+             muted loop playsinline
              poster="media/work1.jpg"
-             data-video="media/work1.mp4"></video>
+             data-video="media/work1.mp4">
+        <source src="media/work1.mp4" type="video/mp4">
+      </video>
 
       <video class="fade-up work-preview"
-             muted loop playsinline preload="none"
+             muted loop playsinline
              poster="media/work2.jpg"
-             data-video="media/work2.mp4"></video>
+             data-video="media/work2.mp4">
+        <source src="media/work2.mp4" type="video/mp4">
+      </video>
 
       <video class="fade-up work-preview"
-             muted loop playsinline preload="none"
+             muted loop playsinline
              poster="media/work3.jpg"
-             data-video="media/work3.mp4"></video>
+             data-video="media/work3.mp4">
+        <source src="media/work3.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
@@ -109,64 +115,44 @@
   </a>
 
   <!-- VIDEO MODAL -->
-  <!--
   <div class="video-modal" id="videoModal">
     <div class="video-modal-overlay"></div>
-
     <div class="video-modal-content">
-      <button class="video-close" id="closeVideo">×</button>
       <video id="modalVideo" controls></video>
     </div>
   </div>
-  -->
 
-  <!-- MOTION SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    // Fade-up animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
 
-    document.querySelectorAll('.fade-up').forEach(el => {
-      observer.observe(el);
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Modal video logic (SAFE)
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+
+    document.querySelectorAll('.work-preview').forEach(video => {
+      video.addEventListener('click', () => {
+        modalVideo.src = video.dataset.video;
+        modal.classList.add('active');
+        modalVideo.play();
+      });
     });
 
-   // MODAL VIDEO LOGIC
-    
-    
-<!--
-const modal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
-const closeBtn = document.getElementById('closeVideo');
-
-document.querySelectorAll('.work-preview').forEach(video => {
-  video.addEventListener('click', () => {
-    modalVideo.src = video.dataset.video;
-    modal.classList.add('active');
-    modalVideo.play();
-  });
-});
-
-closeBtn.addEventListener('click', closeModal);
-modal.addEventListener('click', e => {
-  if (e.target.classList.contains('video-modal-overlay')) {
-    closeModal();
-  }
-});
-
-function closeModal() {
-  modalVideo.pause();
-  modalVideo.currentTime = 0;
-  modalVideo.src = "";
-  modal.classList.remove('active');
-}
--->
+    modal.addEventListener('click', () => {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
+      modalVideo.src = "";
+      modal.classList.remove('active');
+    });
   </script>
 
 </body>
