@@ -10,18 +10,20 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">
       <img src="media/logo.png" alt="Triangle Films">
     </div>
 
     <a class="header-cta"
-       href="https://wa.me/916361426217?text=Hi,%20I%20want%20to%20enquire%20about%20your%20video%20and%20photography%20services."
+       href="https://wa.me/916361426217"
        target="_blank">
        WhatsApp
     </a>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <video autoplay muted loop playsinline>
       <source src="media/hero.mp4" type="video/mp4">
@@ -29,35 +31,37 @@
 
     <div class="hero-content fade-up">
       <h1>Visual stories,<br>shot with intent.</h1>
-      <a class="cta"
-         href="https://wa.me/916361426217?text=Hi,%20I%20want%20to%20enquire%20about%20a%20project."
-         target="_blank">
-         Enquire on WhatsApp
+      <a class="cta" href="https://wa.me/916361426217" target="_blank">
+        Enquire on WhatsApp
       </a>
     </div>
   </section>
 
+  <!-- WORK -->
   <section class="work">
     <h2 class="fade-up">Selected Works</h2>
 
     <div class="work-grid">
-      <video class="fade-up work-preview"
-             muted loop playsinline
-             poster="media/work1.jpg"
+      <video class="work-preview fade-up"
+             muted
+             playsinline
+             preload="metadata"
              data-video="media/work1.mp4">
         <source src="media/work1.mp4" type="video/mp4">
       </video>
 
-      <video class="fade-up work-preview"
-             muted loop playsinline
-             poster="media/work2.jpg"
+      <video class="work-preview fade-up"
+             muted
+             playsinline
+             preload="metadata"
              data-video="media/work2.mp4">
         <source src="media/work2.mp4" type="video/mp4">
       </video>
 
-      <video class="fade-up work-preview"
-             muted loop playsinline
-             poster="media/work3.jpg"
+      <video class="work-preview fade-up"
+             muted
+             playsinline
+             preload="metadata"
              data-video="media/work3.mp4">
         <source src="media/work3.mp4" type="video/mp4">
       </video>
@@ -66,6 +70,7 @@
 
   <div class="neon-divider"></div>
 
+  <!-- PHOTOGRAPHY -->
   <section class="photography">
     <h2 class="fade-up">Photography</h2>
 
@@ -77,6 +82,7 @@
     </div>
   </section>
 
+  <!-- SERVICES -->
   <section class="services">
     <h2 class="fade-up">What We Do</h2>
     <ul class="fade-up">
@@ -87,50 +93,61 @@
     </ul>
   </section>
 
+  <!-- FINAL CTA -->
   <section class="final-cta">
     <h2 class="fade-up">Let’s create something worth remembering.</h2>
-    <a class="cta"
-       href="https://wa.me/916361426217"
-       target="_blank">
-       Start a WhatsApp Conversation
+    <a class="cta" href="https://wa.me/916361426217" target="_blank">
+      Start a WhatsApp Conversation
     </a>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>Triangle Films · Your City</p>
   </footer>
 
-  <a class="mobile-whatsapp"
-     href="https://wa.me/916361426217"
-     target="_blank">
-     WhatsApp
+  <!-- MOBILE CTA -->
+  <a class="mobile-whatsapp" href="https://wa.me/916361426217" target="_blank">
+    WhatsApp
   </a>
 
+  <!-- VIDEO MODAL -->
   <div class="video-modal" id="videoModal">
     <video id="modalVideo" controls></video>
   </div>
 
+  <!-- SCRIPT -->
   <script>
+    // Fade-up animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-
+    // Hover preview (YouTube-style)
     document.querySelectorAll('.work-preview').forEach(video => {
+      video.addEventListener('mouseenter', () => {
+        video.play();
+      });
+
+      video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+
       video.addEventListener('click', () => {
         modalVideo.src = video.dataset.video;
         modal.classList.add('active');
         modalVideo.play();
       });
     });
+
+    // Modal logic
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
 
     modal.addEventListener('click', () => {
       modalVideo.pause();
