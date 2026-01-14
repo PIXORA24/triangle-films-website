@@ -24,6 +24,12 @@
 
   <!-- HERO -->
   <section class="hero">
+
+    <!-- HERO LOGO OVERLAY -->
+    <div class="hero-logo">
+      <img src="media/logo.png" alt="Triangle Films">
+    </div>
+
     <video autoplay muted loop playsinline preload="auto">
       <source src="media/hero.mp4" type="video/mp4">
     </video>
@@ -100,6 +106,7 @@
 
   <!-- SCRIPT -->
   <script>
+    /* Fade-up observer */
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -108,6 +115,7 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+    /* Video modal */
     const modal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
 
@@ -125,6 +133,19 @@
       modalVideo.pause();
       modalVideo.src = "";
       modal.classList.remove('active');
+    });
+
+    /* HERO LOGO SCROLL BEHAVIOR */
+    const heroLogo = document.querySelector('.hero-logo');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        heroLogo.style.transform = 'scale(0.55)';
+        heroLogo.style.opacity = '0';
+      } else {
+        heroLogo.style.transform = 'scale(1)';
+        heroLogo.style.opacity = '1';
+      }
     });
   </script>
 
