@@ -57,6 +57,7 @@ body {
 
 .hero h1 {
   font-size: 64px;
+  font-weight: 500;
   margin-bottom: 24px;
 }
 
@@ -74,7 +75,7 @@ body {
   box-shadow: 0 0 18px rgba(37,211,102,0.6);
 }
 
-/* SECTIONS */
+/* SECTION SPACING */
 .work,
 .photography,
 .services,
@@ -82,14 +83,29 @@ body {
   padding: 120px 8%;
 }
 
+/* Compensate fixed header */
 .work {
   margin-top: -80px;
+}
+
+/* Reduce unwanted gap */
+.photography {
+  padding-bottom: 60px;
+}
+
+.services {
+  padding-top: 60px;
 }
 
 .work h2,
 .photography h2,
 .services h2 {
   margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 /* WORK GRID */
@@ -126,10 +142,6 @@ body {
 }
 
 /* PHOTOGRAPHY */
-.photography {
-  padding-top: 80px;
-}
-
 .photo-strip {
   display: flex;
   gap: 24px;
