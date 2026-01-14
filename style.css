@@ -48,3 +48,29 @@
   font-size: 32px;
   cursor: pointer;
 }
+
+
+.work-preview {
+  cursor: pointer;
+}
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  background: rgba(0,0,0,0.85);
+  z-index: 50;
+}
+
+.video-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal video {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  background: #000;
+}
