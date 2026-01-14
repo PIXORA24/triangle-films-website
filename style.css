@@ -1,10 +1,20 @@
-/* RESET */
+/* RESET + OVERFLOW FIX */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+/* BASE */
 body {
   font-family: 'Inter', sans-serif;
   background: #0E0E0E;
@@ -134,11 +144,14 @@ section {
   display: flex;
   gap: 24px;
   overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
 }
 
 .photo-strip img {
   height: 340px;
   border-radius: 12px;
+  flex-shrink: 0;
 }
 
 /* SERVICES */
