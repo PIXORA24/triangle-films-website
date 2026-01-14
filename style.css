@@ -47,7 +47,7 @@ section {
 
 /* HERO */
 .hero {
-  height: 75vh; /* ✅ desktop reduced */
+  height: 75vh;
   position: relative;
   padding: 0;
 }
@@ -58,11 +58,27 @@ section {
   object-fit: cover;
 }
 
+/* HERO LOGO */
+.hero-logo {
+  position: absolute;
+  top: 14%;
+  left: 8%;
+  z-index: 2;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hero-logo img {
+  height: 96px;
+  width: auto;
+}
+
+/* HERO CONTENT */
 .hero-content {
   position: absolute;
   bottom: 14%;
   left: 8%;
   max-width: 600px;
+  margin-top: 120px;
 }
 
 .hero h1 {
@@ -218,7 +234,15 @@ footer {
   }
 
   .hero {
-    height: 100vh; /* ✅ mobile stays full screen */
+    height: 100vh;
+  }
+
+  .hero-logo img {
+    height: 64px;
+  }
+
+  .hero-logo {
+    top: 10%;
   }
 
   .hero h1 {
