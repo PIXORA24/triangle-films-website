@@ -113,16 +113,15 @@
     const header = document.querySelector('.site-header');
     const heroLogo = document.querySelector('.hero-logo');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 120) {
-    header.classList.add('scrolled');
-    heroLogo.classList.add('shrink');
-  } else {
-    header.classList.remove('scrolled');
-    heroLogo.classList.remove('shrink');
-  }
-});
-
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 120) {
+        header.classList.add('scrolled');
+        heroLogo.classList.add('shrink');
+      } else {
+        header.classList.remove('scrolled');
+        heroLogo.classList.remove('shrink');
+      }
+    });
   </script>
 
 </body>
