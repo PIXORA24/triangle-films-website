@@ -34,7 +34,7 @@ section {
 
 .site-header .logo {
   opacity: 0;
-  transform: scale(0.8);
+  transform: scale(0.85);
   transition: opacity .4s ease, transform .4s ease;
 }
 
@@ -44,7 +44,7 @@ section {
 }
 
 .logo img {
-  height: 32px;
+  height: 36px;
 }
 
 .header-cta {
@@ -69,32 +69,37 @@ section {
   object-fit: cover;
 }
 
-/* HERO CONTENT */
+/* HERO CONTENT (ANCHOR POINT) */
 .hero-content {
   position: absolute;
   left: 8%;
   bottom: 14%;
   max-width: 640px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* HERO LOGO – POLISHED */
+/* HERO LOGO – RESPONSIVE + STABLE */
 .hero-logo {
   margin-bottom: 28px;
   transition: transform .4s ease;
 }
 
 .hero-logo img {
-  height: 140px; /* HERO size */
+  height: clamp(140px, 12vw, 180px);
   width: auto;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
   transition: height .4s ease;
 }
 
-/* Shrunk state = exactly half */
+/* Shrink = EXACTLY HALF */
 .hero-logo.shrink img {
-  height: 70px;
+  height: clamp(70px, 6vw, 90px);
 }
 
+/* HERO TEXT */
 .hero h1 {
   font-size: 64px;
   font-weight: 500;
@@ -221,6 +226,10 @@ footer {
 
   .hero-logo img {
     height: 96px;
+  }
+
+  .hero-logo.shrink img {
+    height: 48px;
   }
 
   .hero h1 {
